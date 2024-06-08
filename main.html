@@ -40,16 +40,14 @@
                 if (rememberMe) {
                     localStorage.setItem('username', username);
                     localStorage.setItem('password', password);
+                    existingUserBtn.style.display = 'block';
                 } else {
                     localStorage.removeItem('username');
                     localStorage.removeItem('password');
+                    existingUserBtn.style.display = 'none';
                 }
 
                 alert(`Logged in as ${username}`);
-                
-                if (rememberMe) {
-                    existingUserBtn.style.display = 'block';
-                }
             });
 
             existingUserBtn.addEventListener('click', function() {
